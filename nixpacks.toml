@@ -1,0 +1,17 @@
+# Nixpacks configuration for Go app
+# Builds the binary and runs it. Your app listens on :7053 in main.go.
+# In Coolify, set Build Pack to Nixpacks and expose port 7053.
+
+[phases.setup]
+# Use a modern Go toolchain. Adjust if needed.
+nixPkgs = ["go_1_22"]
+
+[phases.build]
+cmds = [
+  "go mod download",
+  "go build -o app ."
+]
+
+[start]
+# Your app binds to :7053 (hardcoded). Ensure Coolify maps to 7053.
+cmd = "./app"
