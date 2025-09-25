@@ -1,5 +1,5 @@
 # Multi-stage build for Go service
-FROM golang:1.22-alpine AS build
+FROM golang:1.25-alpine AS build
 WORKDIR /app
 
 # Speed up module downloads
