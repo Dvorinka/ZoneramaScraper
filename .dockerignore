@@ -1,0 +1,20 @@
+# Exclude VCS and local tooling
+.git
+.gitignore
+.vscode
+.idea
+
+# Build artifacts
+bin/
+*.log
+*.tmp
+
+# Node/Front-end (if present)
+node_modules/
+dist/
+build/
+
+# Docker/Compose files (not needed inside image)
+Dockerfile
+docker-compose.yml
+nixpacks.toml

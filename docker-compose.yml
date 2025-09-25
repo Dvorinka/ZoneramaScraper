@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  zonerama:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: zonerama-scraper:latest
+    container_name: zonerama-scraper
+    ports:
+      - "7053:7053"
+    restart: unless-stopped
+    environment:
+      - PORT=7053
+    # If you want to limit resources, uncomment below
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '0.50'
+    #       memory: 512M
